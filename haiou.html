@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海鸥</title>
+    <meta name="description" content="一站式解决方案，助力中国品牌安心出海">
+    <link rel="stylesheet" href="./font_5143270_0qdkv6g9gm6f/iconfont.css">
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        /* 全局变量 */
+        :root {
+            --primary-color: #165DFF; /* 主色调（蓝）- 匹配shoplazza风格 */
+            --secondary-color: #0E2B6B; /* 辅助深色 */
+            --light-color: #F5F7FA; /* 浅灰背景 */
+            --text-dark: #333333; /* 主文本色 */
+            --text-gray: #666666; /* 次要文本色 */
+            --white: #FFFFFF; /* 白色 */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 通用阴影 */
+            --container-width: 1200px; /* 内容容器宽度 */
+        }
+
+        /* 通用样式 */
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #0F52D9;
+            box-shadow: 0 4px 8px rgba(22, 93, 255, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-gray);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        /* 导航栏 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            z-index: 999;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-item a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* 英雄区 */
+        .hero {
+            margin-top: 80px;
+            padding: 40px 0;
+            /* height: 600px; */
+            /* background: linear-gradient(135deg, var(--light-color) 0%, #EDF2FF 100%); */
+            background-image: url(./img/banner-1.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--secondary-color);
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            color: var(--primary-color);
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: 600px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+        }
+
+        /* 核心优势模块 */
+        .advantages {
+            padding: 100px 0;
+        }
+
+        .advantages-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .advantage-item {
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(22, 93,255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .advantage-icon img {
+            width: 30px;
+            /* color: var(--primary-color); */
+        }
+
+        .advantage-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .advantage-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* 产品模块 */
+        .products {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .product-item {
+            display: flex;
+            gap: 24px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .product-desc {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        /* 客户案例 */
+        .cases {
+            padding: 100px 0;
+        }
+
+        .cases-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .case-item {
+            padding-top: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            /* box-shadow: var(--shadow); */
+            transition: transform 0.3s ease;
+        }
+
+        .case-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .cases-list img {
+            width: 240px;
+        }
+        /* .case-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        } */
+
+        .case-info {
+            padding: 20px;
+        }
+
+        .case-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .case-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* 联系我们 */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact .section-title,
+        .contact .section-desc {
+            color: var(--white);
+        }
+
+        .contact .section-desc {
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+        }
+
+        /* 页脚 */
+        .footer {
+            padding: 60px 0 30px;
+            background-color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 0.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+        
+        .footer-top .WeChat {
+          width: 160px;
+          height: 160px;
+        }
+
+        .footer-top .WeChat img {
+          width: 100%;
+          height: 160px;
+        }
+
+        .consultation {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 100;
+        }
+
+        .consultation-box {
+            padding: 66px 88px;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            width: 835px;
+            /* height: 390px; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .consultation-box h3 {
+            color: #0e2b6b;
+            font-size: 66px;
+        }
+
+        .consultation-box3 {
+            padding-top: 20px;
+        }
+        .consultation-box4 {
+            height: 60px;
+            padding: 7px;
+            display: flex;
+        }
+
+        .consultation-box4 .iconfont {
+            line-height: 60px;
+            font-size: 42px;
+            color: #0057a2;
+        }
+
+        .consultation-box4 p {
+            margin-left: 23px;
+            line-height: 60px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .consultation-box .WeChat {
+            width: 260px;
+            height: 260px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 8px #4444444d;
+            background-image: url(./img/WeChat.jpg);
+            background-repeat:no-repeat;
+            background-size: cover
+            
+        }
+
+        .close {
+            position: fixed;
+            cursor: pointer;
+            background-color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: 8px;
+            right: 8px;
+        }
+
+        .close a {
+            margin-left: 10px;
+            line-height: 28px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #00000091;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .advantages-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu, .nav-actions {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                background-position: left center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .advantages-list {
+                grid-template-columns: 1fr;
+            }
+
+            .product-item {
+                flex-direction: column;
+            }
+
+            .cases-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-item img{
+                width: 90%;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .consultation-box {
+              padding: 66px 20px;
+              flex-direction: column;
+              width: 96%;
+            }
+
+            .consultation-box3 {
+              padding-bottom: 30px;
+            }
+
+            .consultation-box h3 {
+                font-size: 46px;
+            }
+
+            .consultation-box .WeChat {
+              position: relative;
+              left: 50%;
+              transform: translate(-50%,0);
+            }
+        }
+    </style>
+    <!-- 引入字体图标 -->
+    <!-- <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                  <img src="./img/logo-2.jpg">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home">首页</a></li>
+                    <li class="nav-item"><a href="#advantages">核心优势</a></li>
+                    <li class="nav-item"><a href="#products">产品服务</a></li>
+                    <li class="nav-item"><a href="#cases">客户案例</a></li>
+                    <li class="nav-item"><a href="#contact">联系我们</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <!-- <a href="#contact" class="btn btn-outline">咨询顾问</a> -->
+                    <a href="#" class="btn btn-primary">立即咨询</a>
+                    <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">数字化转型 <span>一站式解决方案</span></h1>
+                    <p class="hero-desc">为企业提供全链路的数字化升级服务，从产品设计、技术开发到运营落地，助力企业实现高效增长，抢占市场先机。</p>
+                    <div class="hero-btns">
+                        <a  class="btn btn-primary">免费咨询</a>
+                        <!-- <a href="#contact" class="btn btn-outline">免费咨询</a> -->
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- <img src="./images/386c194584e11e952c3f6db5e84791dfbe98b5311605b-enpzU1_fw1200.png" alt="数字化解决方案"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <h2 class="section-title">我们的核心优势</h2>
+            <p class="section-desc">依托多年行业经验与技术积累，为企业提供稳定、高效、可落地的数字化解决方案，持续创造价值。</p>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-users iconfont icon-dianzan"></i> -->
+                         <img src="./img/点赞.png">
+                    </div>
+                    <h3 class="advantage-title">技术领先</h3>
+                    <p class="advantage-desc">采用前沿技术架构，支持高并发、高可用场景，保障系统稳定运行，满足企业不同阶段的业务需求。</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-users"></i> -->
+                         <img src="./img/目标.png">
+                    </div>
+                    <h3 class="advantage-title">专业团队</h3>
+                    <p class="advantage-desc">核心团队均拥有10年以上行业经验，深入理解各行业痛点，提供定制化的解决方案与落地支持。</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-shield-halved"></i> -->
+                         <img src="./img/安全.png">
+                    </div>
+                    <h3 class="advantage-title">安全可靠</h3>
+                    <p class="advantage-desc">多重数据加密与安全防护机制，符合国家信息安全标准，保障企业数据资产安全无虞。</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-rocket"></i> -->
+                         <img src="./img/等待.png">
+                    </div>
+                    <h3 class="advantage-title">快速交付</h3>
+                    <p class="advantage-desc">标准化流程+敏捷开发模式，大幅缩短项目交付周期，让企业更快看到数字化转型效果。</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-headset"></i> -->
+                         <img src="./img/账户.png">
+                    </div>
+                    <h3 class="advantage-title">7×24服务</h3>
+                    <p class="advantage-desc">专业售后团队7×24小时响应，及时解决系统使用过程中的各类问题，保障业务连续运行。</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <!-- <i class="fas fa-chart-line"></i> -->
+                         <img src="./img/数据走势.png">
+                    </div>
+                    <h3 class="advantage-title">数据驱动</h3>
+                    <p class="advantage-desc">内置多维度数据分析模块，帮助企业洞察业务规律，做出更科学的经营决策。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品服务 -->
+    <section class="products" id="products" style="background-color: #f4f7fc;">
+        <div class="container">
+            <h2 class="section-title">产品与服务</h2>
+            <p class="section-desc">覆盖企业全生命周期的数字化产品矩阵，满足不同规模、不同行业企业的个性化需求。</p>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="./img/管理系统.gif" alt="企业SaaS系统">
+                    </div>
+                    <div class="product-text">
+                        <h3 class="product-title">企业级SaaS管理系统</h3>
+                        <p class="product-desc">集成客户管理、订单管理、库存管理、财务管理等核心功能，一键部署，快速上线，降低企业数字化门槛。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="./img/软件开发4.png" alt="定制化开发">
+                    </div>
+                    <div class="product-text">
+                        <h3 class="product-title">定制化软件开发</h3>
+                        <p class="product-desc">根据企业独特业务场景与需求，量身定制专属软件系统，深度适配企业流程，提升核心业务效率。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="./img/数字转化.png" alt="数字化咨询">
+                    </div>
+                    <div class="product-text">
+                        <h3 class="product-title">数字化转型咨询</h3>
+                        <p class="product-desc">专业顾问团队为企业提供数字化战略规划、流程梳理、技术选型等全流程咨询服务，明确转型方向。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="./img/运维.png" alt="运维服务">
+                    </div>
+                    <div class="product-text">
+                        <h3 class="product-title">系统运维与升级</h3>
+                        <p class="product-desc">提供长期系统运维、版本升级、漏洞修复等服务，保障系统持续稳定运行，适配业务发展需求。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户案例 -->
+    <section class="cases" id="cases">
+        <div class="container">
+            <h2 class="section-title">了解我们的全国客户</h2>
+            <p class="section-desc">探索我们全球合作伙伴背后的成功故事立刻探索他们的旅程</p>
+            <div class="cases-list">
+                <div class="case-item">
+                    <img src="./img/lnstagram.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/facebook.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/tiktok.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/百度.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/amazon.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/google.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/Alibab.png" alt="">
+                </div>
+                <div class="case-item">
+                    <img src="./img/youtube.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <!-- <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-desc">填写下方表单，我们的专业顾问将在1个工作日内与您联系，为您提供免费的数字化转型方案评估。</p>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">企业名称</label>
+                    <input type="text" id="name" placeholder="请输入企业名称">
+                </div>
+                <div class="form-group">
+                    <label for="contact">联系人</label>
+                    <input type="text" id="contact" placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label for="phone">联系电话</label>
+                    <input type="tel" id="phone" placeholder="请输入您的手机号码">
+                </div>
+                <div class="form-group">
+                    <label for="desc">需求描述</label>
+                    <textarea id="desc" placeholder="请简要描述您的数字化需求"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary form-submit">提交咨询</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-logo">企业品牌</div>
+                    <p class="footer-desc">专注企业数字化转型，以技术驱动商业增长，让每个企业都能享受数字化带来的红利。</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-zhihu"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="footer-col">
+                    <h3 class="footer-title">产品服务</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">SaaS管理系统</a></li>
+                        <li><a href="#">定制化开发</a></li>
+                        <li><a href="#">数字化咨询</a></li>
+                        <li><a href="#">系统运维</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">企业简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">招贤纳士</a></li>
+                    </ul>
+                </div> -->
+                <div class="footer-col">
+                    <h3 class="footer-title">联系方式</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 微信：a13738083713</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> 电话：+86 17681051342</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> 邮箱：1642326293@qq.com</a></li>
+                    </ul>
+                </div>
+                <div class="WeChat">
+                  <img src="./img/WeChat.png">
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- 弹窗 -->
+    <div class="consultation" style="display: none;">
+        <div class="consultation-box">
+            <div class="consultation-box2">
+                <div class="close"><a>X</a></div>
+                <h3>请联系我们</h3>
+                <div class="consultation-box3">
+                    <div class="consultation-box4">
+                        <div class="iconfont icon-youxiang"></div>
+                        <p>1642326293@qq.com</p>
+                    </div>
+                    <div class="consultation-box4">
+                        <div class="iconfont icon-dianhua"></div>
+                        <p>+86 17681051342</p>
+                    </div>
+                </div>
+            </div>
+            <div class="WeChat">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ConsultationButton = document.querySelector('.nav-actions .btn-primary')
+        const ConsultationButton2 = document.querySelector('.hero-btns .btn-primary')
+        const Consultation = document.querySelector('.consultation')
+        const Close = document.querySelector('.close')
+        function no () {
+            Consultation.style.display = 'block';
+            // document.getElementById('modal').style.display = 'block';
+            // document.body.classList.add('no-scroll');
+            document.body.style.overflow = 'hidden';
+        }
+        ConsultationButton.addEventListener('click',function(){
+            no ()
+        })
+        ConsultationButton2.addEventListener('click',function(){
+            no ()
+        })
+        Close.addEventListener('click',function () {
+            Consultation.style.display = 'none';
+            // document.getElementById('modal').style.display = 'none';
+            // document.body.classList.remove('no-scroll');
+            document.body.style.overflow = 'auto';
+        })
+    </script>
+
+    <script>
+        // 基础交互：平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 表单提交提示
+        // const submitBtn = document.querySelector('.form-submit');
+        // submitBtn.addEventListener('click', function() {
+        //     const name = document.getElementById('name').value;
+        //     const phone = document.getElementById('phone').value;
+        //     if (!name || !phone) {
+        //         alert('请填写企业名称和联系电话！');
+        //         return;
+        //     }
+        //     alert('提交成功！我们将尽快与您联系。');
+        //     document.querySelector('.contact-form').reset();
+        // });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喵喂出海</title>
+    <link rel="stylesheet" href="./font_5143270_0qdkv6g9gm6f/iconfont.css">
+    <link rel="stylesheet" href="./css/Project1-index.css">
+</head>
+<body>
+    <div class="tab-box">
+        <div class="tab standard">
+            <ul>
+                <li class="logo"></li>
+                <li class="column">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">产品</a></li>
+                        <li><a href="#">出海解决方案</a></li>
+                        <li><a href="#">行业解决方案</a></li>
+                        <li><a href="#">成功案例</a></li>
+                        <li><a href="#">关于</a></li>
+                    </ul>
+                </li>
+                <li class="TabButton">立即咨询</li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="banner">
+    </div>
+    <div class="section1 standard">
+        <div class="text">
+            <h3>庞大的海外市场</h3>
+            <h4>拓展海外市场，跳出内卷</h4>
+            <p>打造企业出海营销智能体，构建“市场+销售+服务”线上团队，精准培育B2B潜在客户，全链路营销降本增效，提升品牌影响力，让出海营销事半功倍</p>
+        </div>
+        <img src="./img/消费排名.jpg" alt="">
+    </div>
+    <div class="section2" style="background-color: #f5f5f5;">
+        <div class="box standard">
+            <img src="./img/1.png" alt="">
+            <div class="text">
+                <h3>多维度营销</h3>
+                <h4>聚焦探索潜在市场</h4>
+                <div>
+                    <h5>专业邮箱营销</h5>
+                    <p>全球畅通收发，送达率在95%以上</p>
+                    <h5>多渠道媒体营销</h5>
+                    <p>一站式海外社交媒体（Facebook、Linkedin、Instagram）运营全托管解决方案</p>
+                    <h5>探索更多潜在市场</h5>
+                    <p>全方位营销，不出国门将全球渠道一网打尽</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2 ul1">
+        <div class="box standard">
+            <div class="text">
+                <h3>短视频营销</h3>
+                <h4 style="font-size: 50px;">助力企业打造品牌影响力</h4>
+                <div>
+                    <h5>海外视频账号管理</h5>
+                    <p>支持TikTok、Facebook Reels、Google Shorts多账号的一键绑定，统一管理，高效便捷</p>
+                    <h5>移动APP随地取材</h5>
+                    <p>支持手机端便捷操作，随时随地打开APP，轻松一拍，企业的产品视频、厂房厂貌、发货现场、团队风采就可上传至企业素材库</p>
+                    <h5>智能AI视频制作</h5>
+                    <p>短时间内就能创建一个专业的短视频，让你的产品和品牌在社交媒体上大放异彩。只需要几个步骤，就能创作出适合的TikTok 短视频</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2 ul2" style="background-color: #f5f5f5;">
+        <div class="box standard">
+            <div class="placeholder"></div>
+            <div class="text">
+                <h3>独立站推广</h3>
+                <h4>低成本打造私域流量</h4>
+                <div>
+                    <h5>专业个性化建站</h5>
+                    <p>专业团队DIY代码个性化建站，建站周期短</p>
+                    <h5>多语言建站</h5>
+                    <p>支持15种语言的智能网站建设</p>
+                    <h5>探索更多潜在市场</h5>
+                    <p>更多的内容形式，网站内容最大化利用率</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="consultation" style="display: none;">
+        <div class="consultation-box">
+            <div class="consultation-box2">
+                <div class="close"><a>X</a></div>
+                <h3>请联系我们</h3>
+                <div class="consultation-box3">
+                    <div class="consultation-box4">
+                        <div class="iconfont icon-youxiang"></div>
+                        <p>1642326293@qq.com</p>
+                    </div>
+                    <div class="consultation-box4">
+                        <div class="iconfont icon-dianhua"></div>
+                        <p>+86 17681051342</p>
+                    </div>
+                </div>
+            </div>
+            <div class="WeChat">
+            </div>
+        </div>
+    </div>
+    <script>
+        const ConsultationButton = document.querySelector('.tab-box .TabButton')
+        const Consultation = document.querySelector('.consultation')
+        const Close = document.querySelector('.close')
+        // console.log (consultation)
+        // console.log (ConsultationButton)
+        ConsultationButton.addEventListener('click',function () {
+            Consultation.style.display = 'block';
+            // document.getElementById('modal').style.display = 'block';
+            document.body.classList.add('no-scroll');
+        })
+        Close.addEventListener('click',function () {
+            Consultation.style.display = 'none';
+            // document.getElementById('modal').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        })
+    </script>
+</body>
+</html>
