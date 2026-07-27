@@ -1,0 +1,121 @@
+{
+  "id": "5143270",
+  "name": "06",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7287570",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "7287571",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
+      "icon_id": "46517035",
+      "name": "安全",
+      "font_class": "anquan",
+      "unicode": "ea5a",
+      "unicode_decimal": 59994
+    },
+    {
+      "icon_id": "46517036",
+      "name": "表盘",
+      "font_class": "biaopan",
+      "unicode": "ea5b",
+      "unicode_decimal": 59995
+    },
+    {
+      "icon_id": "46517038",
+      "name": "等待",
+      "font_class": "dengdai",
+      "unicode": "ea5c",
+      "unicode_decimal": 59996
+    },
+    {
+      "icon_id": "46517039",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "ea5d",
+      "unicode_decimal": 59997
+    },
+    {
+      "icon_id": "46517045",
+      "name": "记录",
+      "font_class": "jilu",
+      "unicode": "ea5e",
+      "unicode_decimal": 59998
+    },
+    {
+      "icon_id": "46517048",
+      "name": "日程",
+      "font_class": "richeng",
+      "unicode": "ea5f",
+      "unicode_decimal": 59999
+    },
+    {
+      "icon_id": "46517052",
+      "name": "数据",
+      "font_class": "shuju",
+      "unicode": "ea60",
+      "unicode_decimal": 60000
+    },
+    {
+      "icon_id": "46517053",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "ea61",
+      "unicode_decimal": 60001
+    },
+    {
+      "icon_id": "46517055",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "ea62",
+      "unicode_decimal": 60002
+    },
+    {
+      "icon_id": "46517058",
+      "name": "数据走势",
+      "font_class": "shujuzoushi",
+      "unicode": "ea63",
+      "unicode_decimal": 60003
+    },
+    {
+      "icon_id": "46517059",
+      "name": "文件夹",
+      "font_class": "wenjianjia",
+      "unicode": "ea64",
+      "unicode_decimal": 60004
+    },
+    {
+      "icon_id": "46517062",
+      "name": "转换",
+      "font_class": "zhuanhuan",
+      "unicode": "ea65",
+      "unicode_decimal": 60005
+    },
+    {
+      "icon_id": "46517063",
+      "name": "账户",
+      "font_class": "zhanghu",
+      "unicode": "ea66",
+      "unicode_decimal": 60006
+    },
+    {
+      "icon_id": "46517068",
+      "name": "目标",
+      "font_class": "mubiao",
+      "unicode": "ea67",
+      "unicode_decimal": 60007
+    }
+  ]
+}
